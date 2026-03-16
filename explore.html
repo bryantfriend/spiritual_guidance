@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Explore | Spiritual Guidance</title>
+    <link rel="stylesheet" href="app/styles/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="container">
+        <div class="search-bar glass-card">
+            <i data-lucide="search"></i>
+            <input type="text" placeholder="Search tarot, healing, etc...">
+            <i data-lucide="sliders-horizontal"></i>
+        </div>
+    </header>
+
+    <main id="app" class="container">
+        <section class="discovery-section">
+            <div class="filter-chips">
+                <span class="chip active">All</span>
+                <span class="chip">Healing</span>
+                <span class="chip">Reading</span>
+                <span class="chip">Coaching</span>
+            </div>
+
+            <div id="service-grid" class="service-grid">
+                <!-- Service Cards injected via JS -->
+                 <p class="empty-state">Loading mystical services...</p>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .search-bar { display: flex; align-items: center; gap: 12px; margin-top: 20px; margin-bottom: 24px; }
+        .search-bar input { flex: 1; background: transparent; border: none; color: white; font-size: 1rem; outline: none; }
+        .filter-chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 16px; scrollbar-width: none; }
+        .chip { padding: 8px 16px; background: var(--surface); border: 1px solid var(--glass-border); border-radius: 100px; font-size: 0.85rem; white-space: nowrap; }
+        .chip.active { background: var(--primary); border-color: var(--primary-light); }
+        .service-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    </style>
+
+    <script type="module" src="app/pages/explore.js"></script>
+</body>
+</html>

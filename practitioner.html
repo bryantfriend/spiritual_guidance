@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Practitioner Profile | Spiritual Guidance</title>
+    <link rel="stylesheet" href="app/styles/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="public-profile">
+    <header class="profile-hero">
+        <button class="back-btn" onclick="history.back()"><i data-lucide="chevron-left"></i></button>
+        <div class="profile-header container">
+            <img src="" alt="Practitioner" id="profile-photo">
+            <h1 id="profile-name">Loading...</h1>
+            <p id="profile-specialty"></p>
+            <div class="stats">
+                <span>⭐ 4.9 (24 reviews)</span>
+                <span>•</span>
+                <span>100+ sessions</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-section">
+            <h3>About</h3>
+            <p id="profile-bio">Practitioner details are appearing from the ether...</p>
+        </section>
+
+        <section class="offerings-section">
+            <h3>Offerings</h3>
+            <div id="offerings-list" class="service-grid">
+                <!-- Services for this practitioner -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="profile-footer container">
+        <button class="btn btn-primary">Message Practitioner</button>
+    </footer>
+
+    <style>
+        .profile-hero {
+            padding: 60px 20px 40px;
+            background: linear-gradient(to bottom, var(--primary-dark), var(--background));
+            text-align: center;
+            position: relative;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .profile-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            margin-bottom: 16px;
+            object-fit: cover;
+        }
+        .stats {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .about-section {
+            padding: 32px 0;
+        }
+        .offerings-section h3 {
+            margin-bottom: 16px;
+        }
+        .profile-footer {
+            padding: 24px 20px;
+            position: sticky;
+            bottom: 0;
+            background: var(--background);
+            border-top: 1px solid var(--glass-border);
+        }
+        .service-grid {
+            display: grid;
+            gap: 16px;
+        }
+    </style>
+
+    <script>lucide.createIcons();</script>
+    <script type="module" src="app/pages/practitioner.js"></script>
+</body>
+</html>

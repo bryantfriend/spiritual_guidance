@@ -1,0 +1,295 @@
+:root {
+    /* Color Palette - Premium Cosmic Theme */
+    --primary: #9F7AEA; /* Vibrant Purple */
+    --primary-glow: rgba(159, 122, 234, 0.4);
+    --accent: #F6AD55; /* Warm Gold */
+    --background: #0B0E14; /* Deep Space Black */
+    --surface: #1A1D24;
+    --text: #FFFFFF;
+    --text-muted: #CBD5E0;
+    
+    /* Layout Tokens */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+    
+    /* Advanced Glassmorphism */
+    --glass-bg: rgba(26, 29, 36, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(20px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    padding-bottom: 90px;
+}
+
+.container {
+    padding: 0 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Typography Overhaul */
+h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 2.2rem; font-weight: 800; line-height: 1.1; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+h4 { font-size: 1.1rem; font-weight: 700; }
+
+.text-gradient {
+    background: linear-gradient(135deg, #B794F4 0%, #F6AD55 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Premium Buttons */
+.btn {
+    padding: 14px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), #805AD5);
+    color: white;
+    box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+}
+
+/* Hero Section with BG Image */
+.hero-container {
+    position: relative;
+    height: 420px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, var(--background) 0%, transparent 100%);
+    z-index: -1;
+}
+
+/* Horizontal Practitioner Scrolling */
+.horizontal-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 10px 0 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.horizontal-scroll::-webkit-scrollbar { display: none; }
+
+.practitioner-card {
+    min-width: 180px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.practitioner-card:active { transform: scale(0.97); }
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.rating-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 4px;
+}
+
+/* Section Controls */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0 16px;
+}
+.see-all {
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Grid for Services/Articles */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.tile-card {
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.tile-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tile-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+}
+
+.tile-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Bottom Nav Refinement */
+.bottom-nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 560px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 10px;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s;
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+.nav-item i { width: 22px; height: 22px; }
+.nav-item span { font-size: 0.7rem; font-weight: 600; }
+
+/* Service Card Refinement */
+.service-card {
+    padding: 0;
+    overflow: hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+}
+
+.service-card img {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.service-details {
+    padding: 16px;
+}
+
+.service-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.price {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.category-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.service-author {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}

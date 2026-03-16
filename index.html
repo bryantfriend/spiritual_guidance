@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spiritual Guidance | Marketplace</title>
+    <link rel="stylesheet" href="app/styles/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="container page-header" style="padding: 24px 20px 0; display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="font-size: 1.6rem;">Spiritual Guidance</h1>
+        <button class="nav-btn" style="background: rgba(255,255,255,0.1); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: none; color: white;">
+            <i data-lucide="search"></i>
+        </button>
+    </header>
+
+    <main id="app">
+        <!-- Hero Section -->
+        <section class="hero-container">
+            <img src="app/assets/images/cosmic_hero_bg_1773644975246.png" class="hero-bg" alt="Cosmic Background">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h2 class="text-gradient">Find Your Path</h2>
+                <p style="margin-top: 12px; color: var(--text-muted); font-size: 1.1rem; max-width: 90%;">
+                    Connect with expert spiritual practitioners for healing, guidance, and growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- Top Practitioners -->
+        <section class="container">
+            <div class="section-header">
+                <h3>Top Practitioners</h3>
+                <a href="explore.html" class="see-all">See All</a>
+            </div>
+            <div id="practitioner-scroll" class="horizontal-scroll">
+                <!-- Practitioners injected via JS -->
+                 <p class="empty-state">Invoking practitioners...</p>
+            </div>
+        </section>
+
+        <!-- Popular Services & Articles -->
+        <section class="container">
+            <div class="section-header">
+                <h3>Popular Services</h3>
+                <a href="explore.html" class="see-all">See All</a>
+            </div>
+            <div class="content-grid" id="popular-services-grid">
+                <!-- Service tiles injected via JS -->
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 40px;">
+            <div class="section-header">
+                <h3>Latest Articles</h3>
+                <a href="articles.html" class="see-all">See All</a>
+            </div>
+            <div class="content-grid" id="latest-articles-grid">
+                <!-- Article tiles injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="app/pages/home.js"></script>
+</body>
+</html>

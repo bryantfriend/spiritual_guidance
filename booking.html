@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Book a Session | Spiritual Guidance</title>
+    <link rel="stylesheet" href="app/styles/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="container page-header">
+        <button class="back-btn" onclick="history.back()"><i data-lucide="chevron-left"></i></button>
+        <h1>Book Session</h1>
+    </header>
+
+    <main class="container">
+        <!-- Service Summary -->
+        <div id="selected-service-info" class="selected-service glass-card">
+            <p class="empty-state">Selecting your spiritual path...</p>
+        </div>
+
+        <!-- Booking Form -->
+        <section class="booking-section">
+            <div class="glass-card">
+                <h3>Select Date & Time</h3>
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Time</label>
+                    <input type="time" id="booking-time" required>
+                </div>
+                <div class="form-group">
+                    <label>Message to Practitioner</label>
+                    <textarea id="booking-message" placeholder="e.g. I am seeking guidance on my career path..."></textarea>
+                </div>
+                <button class="btn btn-primary" id="confirm-booking">Confirm Booking Request</button>
+            </div>
+        </section>
+
+        <!-- Past Bookings (if logged in) -->
+        <section class="past-bookings">
+            <h3>Your Recent Bookings</h3>
+            <div id="user-bookings-list" class="booking-list">
+                <p class="empty-state">No bookings found.</p>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .page-header {
+            padding: 24px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .back-btn {
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .selected-service {
+            margin-bottom: 24px;
+        }
+        .selected-service h4 {
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .selected-service .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .booking-section {
+            padding-bottom: 40px;
+        }
+        
+        #booking-message {
+            width: 100%;
+            height: 100px;
+            background: var(--surface-light);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            color: white;
+            padding: 12px;
+            resize: none;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .booking-list {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .booking-item {
+            background: var(--surface);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .booking-item .status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 100px;
+        }
+        .status-pending { background: #B7791F; color: white; }
+        .status-confirmed { background: var(--success); color: white; }
+        .status-cancelled { background: var(--error); color: white; }
+    </style>
+
+    <script>lucide.createIcons();</script>
+    <script type="module" src="app/pages/booking.js"></script>
+</body>
+</html>
