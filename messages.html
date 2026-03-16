@@ -2,21 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Messages | Spiritual Guidance</title>
     <link rel="stylesheet" href="app/styles/main.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="container page-header">
-        <h1>Messages</h1>
+    <header class="container page-header" style="padding: 24px 20px 16px;">
+        <h1 id="messages-title">Messages</h1>
     </header>
-    <main class="container">
-        <p class="empty-state">Secure messaging coming in Phase 3...</p>
+
+    <main class="container" id="messages-container">
+        <!-- Conversation List -->
+        <div id="conv-list-view">
+            <div id="conversations-list" class="conversation-list">
+                <!-- Conversations injected via JS -->
+                 <p class="empty-state">Invoking conversations...</p>
+            </div>
+        </div>
+
+        <!-- Chat View (Hidden by default) -->
+        <div id="chat-view" class="chat-view" style="display: none;">
+            <div id="messages-pane" class="messages-pane">
+                <!-- Messages injected via JS -->
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
+                <button id="send-btn" class="chat-send-btn">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
     </main>
-    <script type="module">
-        import { Navbar } from './app/components/navbar.js';
-        document.addEventListener('DOMContentLoaded', () => Navbar.render());
-    </script>
+
+    <script type="module" src="app/pages/messages.js"></script>
 </body>
 </html>

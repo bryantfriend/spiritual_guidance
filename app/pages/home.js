@@ -52,7 +52,7 @@ function initServiceGrids() {
 
     if (articlesGrid) {
         articlesGrid.innerHTML = mockFeatured.latestArticles.map(item => `
-            <div class="tile-card">
+            <div class="tile-card" onclick="location.href='article.html?id=${item.id}'" style="cursor: pointer;">
                 <img src="${item.image}" class="tile-bg" alt="${item.title}">
                 <div class="tile-overlay">
                     <span class="tile-title">${item.title}</span>
